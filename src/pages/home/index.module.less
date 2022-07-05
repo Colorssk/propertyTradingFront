@@ -1,5 +1,191 @@
 .homeWrapper{
     width: 100%;
+    max-width: 2400px;
     height: 100%;
-    color: red;
+
+    .headerWrapper{
+        width: 100%;
+        max-width: 2400px;
+        height: 41px;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #fff;
+
+        .title{
+            flex: 1;
+            height: 41px;
+            line-height: 41px;
+            text-align: left;
+            background-color: #fff;
+            .titleBg{
+                position: relative;
+                width: 300px;
+                height: 41px;
+                background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%);
+                &::before {
+                    content: "TRADING LOBBY";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #fff;
+                    mix-blend-mode: difference;
+                    animation: move 3s infinite linear alternate;
+                }
+                
+            }
+        }
+
+        .menuWrapper{
+            flex: 1;
+            height: 41px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 24px;
+            gap: 40;
+
+            .userinfo{
+                width: 200px;
+                height: 41px;
+                line-height: 41px;
+                color: black;
+                font-size: 16px;
+                font-weight: 500;
+
+            }
+        }
+    }
+
+    .bodyContent{
+        position: relative;
+        width: 1140px;
+        height: 100%;
+        margin-left: calc(50% - 570px);
+        padding-top: 41px;
+        // content style
+        .ContentWrapper{
+            width: 100%;
+
+            .contentHeader{
+                width: 100%;
+                height: 41px;
+                line-height: 41px;
+                text-align: left;
+                .leftHeader{
+                    display: inline-block;
+                    text-align: left;
+
+                    .themeTitle{
+                        color: #EE6A2A;
+                        font-weight: 600;
+                        font-size: 30px;
+                        padding-right: 18px;
+                    }
+                    .themeLocationTitle{
+                        font-weight: 500;
+                        line-height: 1;
+                        font-size: 30px;
+                        color: rgb(46, 114, 187);
+                        padding-right: 18px;
+                        border-right: 3px solid rgba(23, 23, 23, 0.13);
+                    }
+                    .publishTime{
+                        font-weight: 400;
+                        font-size: 18px;
+                        color: rgb(23, 23, 23);
+                        padding-left: 18px;
+                    }
+                }
+
+                .menuContainer{
+                    float: right;
+                    .viewAllButton{
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #0054a6;
+                        border-right: 2px solid rgba(23, 23, 23, 0.13);
+                        padding-right: 15px;
+                    }
+                    .buttonContainer{
+                        padding-top: 6px;
+                        float: right;
+                        .leftButton{
+                            margin-left: 18px;
+                            display: inline-block;
+                            line-height: 41px;
+                        }
+    
+                        .rightButton{
+                            display: inline-block;
+                            margin-left: 9px;
+                        }
+                    }
+
+                    
+                }
+            }
+
+            .contentBody{
+                width: 100%;
+                min-height: 460px;
+                padding: 20px 0 40px;
+                display: flex;
+                gap: 9px;
+
+                .cardWraper{
+                    flex: 1;
+                    border: 1px solid #D2DEEB;
+                    display: block;
+                    position: relative;
+                    border-radius: 20px;
+                    margin-bottom: 5px;
+                    background-color: #FFFFFF;
+                    margin: 0 10px 0 0;
+                    padding: 15px;
+
+                    &:hover{
+                        transform: scale(1.01);
+                    }
+
+                    .assetImg{
+                        display: block; 
+                        max-width: 100%; 
+                        width: initial; 
+                        height: initial; 
+                        background: none; 
+                        opacity: 1; 
+                        border: 0px; 
+                        margin: 0px; 
+                        padding: 0px;
+                        border-radius: 20px;
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.unAuth {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20vh;
+}
+@keyframes move {
+    0% {
+        transform: translate(-30%, -50%);
+    }
+    100% {
+        transform: translate(-70%, -50%);
+    }
 }
